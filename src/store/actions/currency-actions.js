@@ -54,7 +54,6 @@ export const fetchCurrencyAction = (currencies, date) => (
   switch (true) {
     case currencies[0] === BASE:
       api.get(`${date}?symbols=${currencies[1]}`).then(({ data }) => {
-        console.log(data.rates);
         dispatch(setRatio(data.rates[currencies[1]]));
         dispatch(setButtonStatus(false));
       });
@@ -62,7 +61,6 @@ export const fetchCurrencyAction = (currencies, date) => (
 
     case currencies[1] === BASE:
       api.get(`${date}?symbols=${currencies[0]}`).then(({ data }) => {
-        console.log(data.rates);
         dispatch(setRatio(1 / data.rates[currencies[0]]));
         dispatch(setButtonStatus(false));
       });
@@ -72,7 +70,6 @@ export const fetchCurrencyAction = (currencies, date) => (
       api
         .get(`${date}?symbols=${currencies[0]},${currencies[1]}`)
         .then(({ data }) => {
-          console.log(data.rates);
           dispatch(
             setRatio(data.rates[currencies[1]] / data.rates[currencies[0]])
           );

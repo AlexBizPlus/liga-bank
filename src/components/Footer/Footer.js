@@ -72,10 +72,18 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer__social-block">
-          <FbSvg className="footer__social footer__social-fb" />
-          <InstaSvg className="footer__social footer__social-insta" />
-          <TwitSvg className="footer__social footer__social-twit" />
-          <YoutubeSvg className="footer__social footer__social-youtube" />
+          <a className="footer__social" href={Routes.ERROR404}>
+            <FbSvg className="footer__social-fb" />
+          </a>
+          <a className="footer__social" href={Routes.ERROR404}>
+            <InstaSvg className=" footer__social-insta" />
+          </a>
+          <a className="footer__social" href={Routes.ERROR404}>
+            <TwitSvg className="footer__social-twit" />
+          </a>
+          <a className="footer__social" href={Routes.ERROR404}>
+            <YoutubeSvg className=" footer__social-youtube" />
+          </a>
         </div>
       </div>
     </footer>
